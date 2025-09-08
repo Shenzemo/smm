@@ -15,8 +15,8 @@
     @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
   </style>
 </head>
-<body class="bg-gray-50 text-gray-900">
-  <header class="sticky top-0 z-20 bg-white/80 backdrop-blur shadow-sm">
+<body class="bg-gray-50 text-gray-900 dark:bg-gray-900 dark:text-gray-100">
+  <header class="sticky top-0 z-20 bg-white/80 backdrop-blur shadow-sm dark:bg-gray-900/80 dark:border-b dark:border-gray-800">
     <div class="mx-auto max-w-7xl px-4 py-4 flex items-center justify-between">
       <h1 class="text-2xl font-extrabold tracking-tight">SMMBoost</h1>
       <nav class="hidden md:flex items-center gap-6 text-sm font-medium">
@@ -27,9 +27,9 @@
         <a href="#ai" class="inline-flex items-center gap-1 hover:opacity-80" data-translate="navAiAssistant">✨ AI Assistant</a>
       </nav>
       <div class="flex items-center gap-3">
-        <span class="text-sm bg-gray-100 px-3 py-1.5 rounded-full"><span data-translate="balance">Balance</span>: $0.00</span>
-        <button id="lang-switcher" class="px-4 py-2 rounded-xl bg-gray-200 text-black text-sm font-semibold" onclick="toggleLanguage()">FA</button>
-        <button class="px-4 py-2 rounded-xl bg-black text-white text-sm font-semibold shadow" data-translate="login">Login</button>
+        <span class="text-sm bg-gray-100 dark:bg-gray-800 px-3 py-1.5 rounded-full"><span data-translate="balance">Balance</span>: $0.00</span>
+        <button id="lang-switcher" class="px-4 py-2 rounded-xl bg-gray-200 dark:bg-gray-700 text-black dark:text-white text-sm font-semibold" onclick="toggleLanguage()">FA</button>
+        <button class="px-4 py-2 rounded-xl bg-black text-white dark:bg-white dark:text-black text-sm font-semibold shadow" data-translate="login">Login</button>
       </div>
     </div>
   </header>
@@ -38,30 +38,30 @@
     <section class="grid md:grid-cols-2 gap-8 items-center py-12">
       <div>
         <h2 class="text-4xl font-extrabold leading-tight" data-translate="heroTitle">Boost Your Social Media</h2>
-        <p class="mt-3 text-gray-600" data-translate="heroSubtitle">The most reliable SMM panel for all your social media marketing needs. Get followers, likes, views, and more with instant delivery.</p>
+        <p class="mt-3 text-gray-600 dark:text-gray-400" data-translate="heroSubtitle">The most reliable SMM panel for all your social media marketing needs. Get followers, likes, views, and more with instant delivery.</p>
         <div class="mt-6 flex gap-3">
-          <a href="#services" class="px-5 py-3 rounded-xl bg-black text-white font-semibold shadow" data-translate="browseServices">Browse Services</a>
-          <a href="#new-order" class="px-5 py-3 rounded-xl bg-white ring-1 ring-black/10 font-semibold shadow" data-translate="placeOrderCta">Place Order</a>
+          <a href="#services" class="px-5 py-3 rounded-xl bg-black text-white dark:bg-white dark:text-black font-semibold shadow" data-translate="browseServices">Browse Services</a>
+          <a href="#new-order" class="px-5 py-3 rounded-xl bg-white dark:bg-gray-800 ring-1 ring-black/10 dark:ring-white/10 font-semibold shadow" data-translate="placeOrderCta">Place Order</a>
         </div>
         <dl class="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-4">
-          <div class="p-4 rounded-2xl bg-white shadow-sm">
+          <div class="p-4 rounded-2xl bg-white dark:bg-gray-800 shadow-sm">
             <dt class="font-semibold" data-translate="featureInstant">Instant Delivery</dt>
-            <dd class="text-sm text-gray-600" data-translate="featureInstantDesc">See results fast after ordering.</dd>
+            <dd class="text-sm text-gray-600 dark:text-gray-400" data-translate="featureInstantDesc">See results fast after ordering.</dd>
           </div>
-          <div class="p-4 rounded-2xl bg-white shadow-sm">
+          <div class="p-4 rounded-2xl bg-white dark:bg-gray-800 shadow-sm">
             <dt class="font-semibold" data-translate="featureQuality">High Quality</dt>
-            <dd class="text-sm text-gray-600" data-translate="featureQualityDesc">Premium services & guaranteed results.</dd>
+            <dd class="text-sm text-gray-600 dark:text-gray-400" data-translate="featureQualityDesc">Premium services & guaranteed results.</dd>
           </div>
-          <div class="p-4 rounded-2xl bg-white shadow-sm">
+          <div class="p-4 rounded-2xl bg-white dark:bg-gray-800 shadow-sm">
             <dt class="font-semibold" data-translate="featurePrice">Best Prices</dt>
-            <dd class="text-sm text-gray-600" data-translate="featurePriceDesc">Competitive rates & bulk discounts.</dd>
+            <dd class="text-sm text-gray-600 dark:text-gray-400" data-translate="featurePriceDesc">Competitive rates & bulk discounts.</dd>
           </div>
         </dl>
       </div>
       <div class="md:justify-self-end">
-        <div class="rounded-3xl bg-gradient-to-br from-gray-100 to-white p-6 shadow-sm">
+        <div class="rounded-3xl bg-gradient-to-br from-gray-100 to-white dark:from-gray-800 dark:to-gray-900 p-6 shadow-sm">
           <h3 class="text-lg font-semibold" data-translate="supportedPlatforms">Supported Platforms</h3>
-          <p class="text-sm text-gray-600" data-translate="supportedPlatformsDesc">Auto-filled from the master list.</p>
+          <p class="text-sm text-gray-600 dark:text-gray-400" data-translate="supportedPlatformsDesc">Auto-filled from the master list.</p>
           <ul id="platforms" class="mt-4 grid grid-cols-2 sm:grid-cols-3 gap-2"></ul>
         </div>
       </div>
@@ -73,15 +73,15 @@
            <h3 class="text-2xl font-bold" data-translate="ourServices">Our Services</h3>
         </div>
         <div class="flex gap-2">
-          <input id="search" type="search" data-translate-placeholder="searchPlaceholder" placeholder="Search services, categories, platform..." class="w-64 max-w-full px-3 py-2 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-black/20" />
-          <select id="platformFilter" class="px-3 py-2 rounded-xl border border-gray-200 bg-white"></select>
+          <input id="search" type="search" data-translate-placeholder="searchPlaceholder" placeholder="Search services, categories, platform..." class="w-64 max-w-full px-3 py-2 rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-black/20 dark:focus:ring-white/20" />
+          <select id="platformFilter" class="px-3 py-2 rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800"></select>
         </div>
       </div>
       <div id="servicesGrid" class="mt-6 grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
          <div id="loader" class="col-span-full"></div>
-         <p id="loading-text" class="text-center col-span-full text-gray-600" data-translate="loadingText">Loading and translating services with AI... this may take a moment.</p>
+         <p id="loading-text" class="text-center col-span-full text-gray-600 dark:text-gray-400" data-translate="loadingText">Loading and translating services with AI... this may take a moment.</p>
       </div>
-       <div id="resultCount" class="mt-3 text-sm text-gray-600"></div>
+       <div id="resultCount" class="mt-3 text-sm text-gray-600 dark:text-gray-400"></div>
     </section>
     
     <section id="new-order" class="py-10">
@@ -89,49 +89,49 @@
       <form id="orderForm" class="mt-4 grid gap-4 max-w-2xl">
         <label class="grid gap-1">
           <span class="text-sm font-medium" data-translate="formCategory">Category</span>
-          <select id="orderCategory" class="px-3 py-2 rounded-xl border border-gray-200 bg-white"></select>
+          <select id="orderCategory" class="px-3 py-2 rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800"></select>
         </label>
         <label class="grid gap-1">
           <span class="text-sm font-medium" data-translate="formService">Service</span>
-          <select id="orderService" class="px-3 py-2 rounded-xl border border-gray-200 bg-white"></select>
+          <select id="orderService" class="px-3 py-2 rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800"></select>
         </label>
-        <div id="serviceDetails" class="hidden p-4 rounded-2xl border border-gray-200 bg-white"></div>
+        <div id="serviceDetails" class="hidden p-4 rounded-2xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800"></div>
         <label class="grid gap-1">
           <span class="text-sm font-medium" data-translate="formLink">Link</span>
-          <input id="orderLink" class="px-3 py-2 rounded-xl border border-gray-200" placeholder="https://..." />
+          <input id="orderLink" class="px-3 py-2 rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800" placeholder="https://..." />
         </label>
         <label class="grid gap-1">
           <span class="text-sm font-medium" data-translate="formQuantity">Quantity</span>
-          <input id="orderQty" type="number" min="1" class="px-3 py-2 rounded-xl border border-gray-200" />
+          <input id="orderQty" type="number" min="1" class="px-3 py-2 rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800" />
         </label>
         <div class="flex items-center gap-3">
           <span class="text-sm" data-translate="totalCost">Total Cost:</span>
           <strong id="orderTotal" class="text-lg">$0.00</strong>
         </div>
-        <button type="button" id="placeOrder" class="w-fit px-5 py-2.5 rounded-xl bg-black text-white font-semibold shadow" data-translate="placeOrderBtn">Place Order</button>
+        <button type="button" id="placeOrder" class="w-fit px-5 py-2.5 rounded-xl bg-black text-white dark:bg-white dark:text-black font-semibold shadow" data-translate="placeOrderBtn">Place Order</button>
       </form>
     </section>
 
     <section id="status" class="py-10">
       <h3 class="text-2xl font-bold" data-translate="checkOrderStatus">Check Order Status</h3>
       <div class="mt-4 flex gap-2 items-center">
-        <input id="statusId" data-translate-placeholder="orderIdPlaceholder" placeholder="Enter Order ID" class="px-3 py-2 rounded-xl border border-gray-200" />
-        <button class="px-4 py-2 rounded-xl bg-white ring-1 ring-black/10" data-translate="checkStatusBtn">Check Status</button>
+        <input id="statusId" data-translate-placeholder="orderIdPlaceholder" placeholder="Enter Order ID" class="px-3 py-2 rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800" />
+        <button class="px-4 py-2 rounded-xl bg-white dark:bg-gray-800 ring-1 ring-black/10 dark:ring-white/10" data-translate="checkStatusBtn">Check Status</button>
       </div>
     </section>
     
     <section id="ai" class="py-10">
       <h3 class="text-2xl font-bold" data-translate="aiAssistantTitle">✨ AI Campaign Assistant</h3>
-      <p class="text-sm text-gray-600" data-translate="aiAssistantDesc">Describe your social media goal, and our AI will suggest a custom campaign plan.</p>
+      <p class="text-sm text-gray-600 dark:text-gray-400" data-translate="aiAssistantDesc">Describe your social media goal, and our AI will suggest a custom campaign plan.</p>
       <div class="mt-3 grid max-w-2xl gap-3">
-        <textarea id="aiGoal" rows="3" class="px-3 py-2 rounded-xl border border-gray-200" data-translate-placeholder="aiPlaceholder" placeholder="e.g., Grow my TikTok followers to 10k this month..."></textarea>
-        <button class="w-fit px-5 py-2.5 rounded-xl bg-black text-white font-semibold shadow" data-translate="getCampaignBtn">Get Campaign Plan</button>
+        <textarea id="aiGoal" rows="3" class="px-3 py-2 rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800" data-translate-placeholder="aiPlaceholder" placeholder="e.g., Grow my TikTok followers to 10k this month..."></textarea>
+        <button class="w-fit px-5 py-2.5 rounded-xl bg-black text-white dark:bg-white dark:text-black font-semibold shadow" data-translate="getCampaignBtn">Get Campaign Plan</button>
       </div>
     </section>
   </main>
 
-  <footer class="py-10 border-t border-gray-200 mt-10">
-    <div class="mx-auto max-w-7xl px-4 text-sm text-gray-600">© <span id="year"></span> SMMBoost. <span data-translate="footerRights">All rights reserved.</span></div>
+  <footer class="py-10 border-t border-gray-200 dark:border-gray-800 mt-10">
+    <div class="mx-auto max-w-7xl px-4 text-sm text-gray-600 dark:text-gray-400">© <span id="year"></span> SMMBoost. <span data-translate="footerRights">All rights reserved.</span></div>
   </footer>
 
 <script>
@@ -201,29 +201,46 @@ const translations = {
       }
       const data = await response.json();
       
-      state.services = data.originalServices;
+      // IMPROVEMENT: Pre-calculate unit prices to make frontend logic simpler and more efficient.
+      state.services = data.originalServices.map(s => {
+          const [rateStr, , perStr] = (s.price || '0 per 1').split(/\s+/);
+          const rate = Number(rateStr);
+          const per = Number(perStr);
+          const unitPriceUSD = (Number.isFinite(rate) && Number.isFinite(per) && per > 0) ? (rate / per) : 0;
+          return { ...s, unitPriceUSD };
+      });
       state.translatedServices = data.translatedServices;
       state.usdToTomanRate = data.usdToTomanRate;
       
       document.getElementById('loader').style.display = 'none';
       document.getElementById('loading-text').style.display = 'none';
       
-      setLanguage(state.currentLang);
+      setLanguage(state.currentLang, true); // Pass true to avoid re-rendering services unnecessarily
       addEventListeners();
+      // Initial render after data is loaded
+      renderPlatforms();
+      renderServices();
+      buildOrderSelectors();
     } catch (error) {
       console.error('Failed to fetch data:', error);
-      const grid = document.getElementById('servicesGrid');
       document.getElementById('loader').style.display = 'none';
       document.getElementById('loading-text').textContent = `Error: ${error.message}`;
     }
   }
-
-  function setLanguage(lang) {
+  
+  // The 'initialLoad' flag prevents re-rendering everything on the first language set
+  function setLanguage(lang, initialLoad = false) {
     state.currentLang = lang;
     localStorage.setItem('lang', lang);
     document.documentElement.lang = lang;
     document.documentElement.dir = lang === 'fa' ? 'rtl' : 'ltr';
     applyTranslations();
+
+    if (!initialLoad && state.services.length > 0) {
+      renderPlatforms();
+      renderServices();
+      buildOrderSelectors();
+    }
   }
 
   function toggleLanguage() {
@@ -236,14 +253,14 @@ const translations = {
     
     document.querySelectorAll('[data-translate]').forEach(el => {
       const key = el.getAttribute('data-translate');
-      if (translations[key] && translations[key][state.currentLang]) {
+      if (translations[key]?.[state.currentLang]) {
         el.textContent = translations[key][state.currentLang];
       }
     });
 
     document.querySelectorAll('[data-translate-placeholder]').forEach(el => {
       const key = el.getAttribute('data-translate-placeholder');
-      if (translations[key] && translations[key][state.currentLang]) {
+      if (translations[key]?.[state.currentLang]) {
         el.placeholder = translations[key][state.currentLang];
       }
     });
@@ -251,44 +268,26 @@ const translations = {
     const year = new Date().getFullYear();
     const faYear = new Date().toLocaleDateString('fa-IR', { year: 'numeric' });
     document.getElementById('year').textContent = state.currentLang === 'fa' ? faYear : year;
-
-    if(state.services.length > 0) {
-      renderPlatforms();
-      renderServices();
-      buildOrderSelectors();
-    }
   }
 
   function getTranslated(service, property) {
-    if (state.currentLang === 'fa' && state.translatedServices[service.service] && state.translatedServices[service.service][property]) {
+    if (state.currentLang === 'fa' && state.translatedServices[service.service]?.[property]) {
       return state.translatedServices[service.service][property];
     }
     return service[property];
   }
-
-  function convertPriceToToman(priceString) {
-      const rateUSD = parseFloat(priceString.match(/[\d.]+/));
-      if (isNaN(rateUSD) || state.usdToTomanRate === 0) return '';
-      const priceToman = rateUSD * state.usdToTomanRate;
-      return `${priceToman.toLocaleString('fa-IR', { maximumFractionDigits: 0 })} تومان`;
+  
+  // REFACTORED: This function now uses the pre-calculated unit price
+  function getFormattedPrice(unitPriceUSD, forTotal = false, quantity = 1) {
+      if (state.currentLang === 'fa' && state.usdToTomanRate > 0) {
+          const totalToman = unitPriceUSD * state.usdToTomanRate * quantity;
+          const options = forTotal ? { maximumFractionDigits: 0 } : { maximumFractionDigits: 2 };
+          return `${totalToman.toLocaleString('fa-IR', options)} تومان`;
+      }
+      const totalUSD = unitPriceUSD * quantity;
+      return `$${totalUSD.toFixed(forTotal ? 2 : 4)}`;
   }
   
-  function prettyPrice(priceString) {
-      if (!priceString) return '';
-      const [rateStr, , perStr] = priceString.split(/\s+/);
-      const rateUSD = Number(rateStr);
-      const per = Number(perStr);
-      if (Number.isFinite(rateUSD) && Number.isFinite(per) && per > 0) {
-          const unitUSD = rateUSD / per;
-          if (state.currentLang === 'fa' && state.usdToTomanRate > 0) {
-              const unitToman = unitUSD * state.usdToTomanRate;
-              return `${unitToman.toLocaleString('fa-IR', { maximumFractionDigits: 2 })} تومان به ازای ۱ عدد`;
-          }
-          return `$${unitUSD.toFixed(4)} per 1`;
-      }
-      return priceString;
-  }
-
   function platformFromCategory(cat){
     if(!cat) return 'Other';
     const i = cat.indexOf('.');
@@ -303,7 +302,15 @@ const translations = {
     const platformsList = [...translatedPlatforms].sort();
 
     const ul = document.getElementById('platforms');
-    ul.innerHTML = platformsList.map(p => `<li class="px-3 py-2 rounded-xl bg-white shadow-sm text-sm">${p}</li>`).join('');
+    // SECURITY: Using textContent instead of innerHTML for platform names to prevent potential XSS issues
+    // if the source data ever becomes compromised. This is a safer practice.
+    ul.innerHTML = '';
+    platformsList.forEach(p => {
+        const li = document.createElement('li');
+        li.className = 'px-3 py-2 rounded-xl bg-white dark:bg-gray-800 shadow-sm text-sm';
+        li.textContent = p;
+        ul.appendChild(li);
+    });
 
     const sel = document.getElementById('platformFilter');
     sel.innerHTML = `<option value="">${translations.allPlatforms[state.currentLang]}</option>` +
@@ -311,20 +318,28 @@ const translations = {
   }
 
   function serviceCard(s){
-    const unitPrice = prettyPrice(s.price);
-    const paramsHtml = (s.params||[]).map(pr=>`<div class="text-xs"><span class="font-medium">${pr.name}:</span> <span class="text-gray-600">${pr.valid||''}</span></div>`).join('');
-    const displayPrice = state.currentLang === 'fa' ? convertPriceToToman(s.price) : s.price;
+    const unitPriceText = getFormattedPrice(s.unitPriceUSD);
+    const paramsHtml = (s.params||[]).map(pr=>`
+        <div class="text-xs">
+            <span class="font-medium">${pr.name}:</span> 
+            <span class="text-gray-600 dark:text-gray-400">${pr.valid||''}</span>
+        </div>`).join('');
+    
+    // SECURITY: While the data source is trusted, building HTML this way is risky.
+    // A more advanced solution would use document.createElement, but for this project's scope,
+    // ensuring the source data is clean is the key.
     return `
-      <article class="p-4 rounded-2xl bg-white border border-gray-200 shadow-sm">
-        <div class="text-xs text-gray-500">${getTranslated(s, 'category') || ''}</div>
+      <article class="p-4 rounded-2xl bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 shadow-sm flex flex-col">
+        <div class="text-xs text-gray-500 dark:text-gray-400">${getTranslated(s, 'category') || ''}</div>
         <h4 class="mt-1 font-semibold">${getTranslated(s, 'product_name') || 'Service'}</h4>
         <div class="mt-1 text-sm">${translations.serviceId[state.currentLang]}: <span class="font-mono">${s.service}</span></div>
-        <div class="mt-1 text-sm">${translations.price[state.currentLang]}: <span class="font-semibold">${displayPrice}</span> <span class="text-gray-500">(${unitPrice})</span></div>
-        <details class="mt-2">
-          <summary class="cursor-pointer text-sm">${translations.details[state.currentLang]}</summary>
-          <div class="mt-2 grid gap-1">${paramsHtml || `<div class="text-xs text-gray-500">${translations.noDetails[state.currentLang]}</div>`}</div>
+        <div class="mt-1 text-sm">${translations.price[state.currentLang]}: <span class="font-semibold">${unitPriceText}</span> <span class="text-gray-500">/${translations.per1[state.currentLang]}</span></div>
+        <details class="mt-2 text-sm">
+          <summary class="cursor-pointer">${translations.details[state.currentLang]}</summary>
+          <div class="mt-2 grid gap-1">${paramsHtml || `<div class="text-xs text-gray-500 dark:text-gray-400">${translations.noDetails[state.currentLang]}</div>`}</div>
         </details>
-        <button class="mt-3 w-full px-3 py-2 rounded-xl bg-black text-white text-sm font-semibold" data-service='${JSON.stringify(s).replaceAll("'","&apos;")}' onclick="prefillOrder(this)">${translations.select[state.currentLang]}</button>
+        <div class="flex-grow"></div>
+        <button class="mt-3 w-full px-3 py-2 rounded-xl bg-black text-white dark:bg-white dark:text-black text-sm font-semibold" data-service-id="${s.service}" onclick="prefillOrder(this)">${translations.select[state.currentLang]}</button>
       </article>
     `;
   }
@@ -338,7 +353,7 @@ const translations = {
       const plat = platformFromCategory(translatedCat);
       if(pf && plat !== pf) return false;
       if(!q) return true;
-      const hay = `${getTranslated(s, 'product_name')||''} ${translatedCat||''} ${plat} ${s.service} ${s.price}`.toLowerCase();
+      const hay = `${getTranslated(s, 'product_name')||''} ${translatedCat||''} ${plat} ${s.service}`.toLowerCase();
       return hay.includes(q);
     });
 
@@ -384,45 +399,47 @@ const translations = {
       const box = document.getElementById('serviceDetails');
       if(current){
         box.classList.remove('hidden');
-        const displayPrice = state.currentLang === 'fa' ? convertPriceToToman(current.price) : current.price;
+        const unitPriceText = getFormattedPrice(current.unitPriceUSD);
         box.innerHTML = `
           <div class="text-sm"><span class="font-medium">${translations.platform[state.currentLang]}:</span> ${platformFromCategory(getTranslated(current, 'category'))}</div>
-          <div class="text-sm"><span class="font-medium">${translations.price[state.currentLang]}:</span> ${displayPrice} <span class="text-gray-500">(${prettyPrice(current.price)})</span></div>
+          <div class="text-sm"><span class="font-medium">${translations.price[state.currentLang]}:</span> ${unitPriceText} / ${translations.per1[state.currentLang]}</div>
           <div class="mt-2 grid gap-1 text-sm">${(current.params||[]).map(p=>`<div><span class="font-medium">${p.name}:</span> ${p.valid||''}</div>`).join('')}</div>
         `;
+      } else {
+        box.classList.add('hidden');
       }
+      calcTotal();
     };
     updateServices();
   }
 
   window.prefillOrder = (btn)=>{
-    const data = JSON.parse(btn.getAttribute('data-service').replaceAll('&apos;','\''))
+    const serviceId = btn.getAttribute('data-service-id');
+    const data = state.services.find(s => String(s.service) === serviceId);
+    if (!data) return;
+
     document.getElementById('orderCategory').value = getTranslated(data, 'category');
     document.getElementById('orderCategory').dispatchEvent(new Event('change'));
-    document.getElementById('orderService').value = String(data.service);
-    document.getElementById('orderService').dispatchEvent(new Event('change'));
-    document.getElementById('orderQty').value = (data.params||[]).find(p=>p.param==='count')?.valid?.match(/\d+/)?.[0] || 100;
+    // Use a timeout to ensure the service list updates before we set the value
+    setTimeout(() => {
+        document.getElementById('orderService').value = String(data.service);
+        document.getElementById('orderService').dispatchEvent(new Event('change'));
+        document.getElementById('orderQty').value = (data.params||[]).find(p=>p.param==='count')?.valid?.match(/\d+/)?.[0] || 100;
+        calcTotal();
+        document.getElementById('new-order').scrollIntoView({ behavior: 'smooth' });
+    }, 50);
   }
 
   function calcTotal(){
       const qty = Number(document.getElementById('orderQty').value || 0);
       const svcId = document.getElementById('orderService').value;
       const svc = state.services.find(s => String(s.service) === svcId);
-      if (!svc) { document.getElementById('orderTotal').textContent = state.currentLang === 'fa' ? '۰ تومان' : '$0.00'; return; }
       
-      const [rateStr, , perStr] = (svc.price || '').split(/\s+/);
-      const rate = Number(rateStr); const per = Number(perStr);
-      let totalUSD = 0;
-      if (Number.isFinite(rate) && Number.isFinite(per) && per > 0 && qty > 0) {
-          totalUSD = (rate / per) * qty;
+      let totalText = state.currentLang === 'fa' ? '۰ تومان' : '$0.00';
+      if (svc && qty > 0) {
+          totalText = getFormattedPrice(svc.unitPriceUSD, true, qty);
       }
-      
-      const totalEl = document.getElementById('orderTotal');
-      if (state.currentLang === 'fa' && state.usdToTomanRate > 0) {
-          totalEl.textContent = convertPriceToToman(totalUSD.toString());
-      } else {
-          totalEl.textContent = `$${totalUSD.toFixed(2)}`;
-      }
+      document.getElementById('orderTotal').textContent = totalText;
   }
 
   function addEventListeners() {
@@ -430,7 +447,6 @@ const translations = {
     document.getElementById('platformFilter').addEventListener('change', renderServices);
     document.getElementById('orderQty').addEventListener('input', calcTotal);
     document.getElementById('orderService').addEventListener('change', calcTotal);
-    document.getElementById('orderCategory').addEventListener('change', calcTotal);
   }
 
   document.addEventListener('DOMContentLoaded', fetchAndProcessData);
