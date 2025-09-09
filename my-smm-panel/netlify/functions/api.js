@@ -1,7 +1,7 @@
 const { GoogleGenerativeAI } = require("@google/generative-ai");
 
-const MASTER_LIST_URL = "[https://gist.githubusercontent.com/Shenzemo/7014871bbc721823ef28a5332740445f/raw/98b589c932a2598a484afa28a348a19986be043a/gistfile1.txt](https://gist.githubusercontent.com/Shenzemo/7014871bbc721823ef28a5332740445f/raw/98b589c932a2598a484afa28a348a19986be043a/gistfile1.txt)";
-const CURRENCY_URL = "[https://sarfe.erfjab.com/prices](https://sarfe.erfjab.com/prices)";
+const MASTER_LIST_URL = "https://gist.githubusercontent.com/Shenzemo/7014871bbc721823ef28a5332740445f/raw/98b589c932a2598a484afa28a348a19986be043a/gistfile1.txt";
+const CURRENCY_URL = "https://sarfe.erfjab.com/prices";
 
 exports.handler = async () => {
   const apiKey = process.env.GEMINI_API_KEY;
@@ -100,4 +100,5 @@ exports.handler = async () => {
     };
   }
 };
+
 
