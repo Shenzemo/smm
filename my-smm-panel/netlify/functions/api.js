@@ -1,9 +1,9 @@
-import { GoogleGenerativeAI } from "@google/generative-ai/google-ai";
+const { GoogleGenerativeAI } = require("@google/generative-ai/google-ai");
 
 const MASTER_LIST_URL = "https://gist.githubusercontent.com/Shenzemo/7014871bbc721823ef28a5332740445f/raw/98b589c932a2598a484afa28a348a19986be043a/gistfile1.txt";
 const CURRENCY_URL = "https://sarfe.erfjab.com/prices";
 
-export const handler = async () => {
+exports.handler = async () => {
   const apiKey = process.env.GEMINI_API_KEY;
   if (!apiKey) {
     return { statusCode: 500, body: JSON.stringify({ error: "GEMINI_API_KEY is not configured." }) };
@@ -80,5 +80,6 @@ export const handler = async () => {
     };
   }
 };
+
 
 
