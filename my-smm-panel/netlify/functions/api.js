@@ -18,8 +18,13 @@ exports.handler = async () => {
       fetch(CURRENCY_URL),
     ]);
 
-    if (!servicesResponse.ok) throw new Error("Failed to fetch SMM services list");
-    const originalServices = await servicesResponse.json();
+if (!servicesResponse.ok) throw new Error("Failed to fetch SMM services list");
+
+const servicesText = await servicesResponse.text();
+if (!servicesText) {
+  throw new Error("SMM services list is empty or could not be loaded.");
+}
+const originalServices = JSON.parse(servicesText);
 
     if (!currencyResponse.ok) throw new Error("Failed to fetch currency rates");
 const currencyData = await currencyResponse.json();
