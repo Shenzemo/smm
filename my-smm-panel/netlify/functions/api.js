@@ -18,6 +18,9 @@ exports.handler = async () => {
       fetch(CURRENCY_URL),
     ]);
 
+// --- Start: Use this complete block in your api.js ---
+
+// 1. Handle the Services response safely
 if (!servicesResponse.ok) throw new Error("Failed to fetch SMM services list");
 
 const servicesText = await servicesResponse.text();
@@ -26,8 +29,31 @@ if (!servicesText) {
 }
 const originalServices = JSON.parse(servicesText);
 
-    if (!currencyResponse.ok) throw new Error("Failed to fetch currency rates");
-const currencyData = await currencyResponse.json();
+
+// 2. Handle the Currency response safely
+if (!currencyResponse.ok) throw new Error("Failed to fetch currency rates");
+
+const currencyText = await currencyResponse.text();
+if (!currencyText) {
+  // If currency fails, we don't crash. We just set the rate to 0.
+  console.warn("Currency data was empty. Defaulting Toman rate to 0.");
+  var currencyData = []; // Use 'var' so it's accessible outside the block
+} else {
+  var currencyData = JSON.parse(currencyText);
+}
+
+
+let usdToToman = 0; // Default value
+if (Array.isArray(currencyData)) {
+    const usdData = currencyData.find(c => c.slug === "usd");
+    if (usdData && usdData.price) {
+        const usdPrice = parseFloat(usdData.price.replace(/,/g, ''));
+        if (!isNaN(usdPrice)) {
+            usdToToman = usdPrice / 10; // Convert from Rial to Toman
+        }
+    }
+}
+// --- End: Replacement block ---
 
 let usdToToman = 0; // Default value
 // ROBUSTNESS: The currency API structure changed. It now returns an array directly.
@@ -92,6 +118,7 @@ if (Array.isArray(currencyData)) {
     };
   }
 };
+
 
 
 
