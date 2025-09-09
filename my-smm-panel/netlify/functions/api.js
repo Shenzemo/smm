@@ -1,7 +1,7 @@
 const { GoogleGenerativeAI } = require("@google/generative-ai");
 
-const MASTER_LIST_URL = "https://gist.githubusercontent.com/Shenzemo/7014871bbc721823ef28a5332740445f/raw/98b589c932a2598a484afa28a348a19986be043a/gistfile1.txt";
-const CURRENCY_URL = "https://sarfe.erfjab.com/prices";
+const MASTER_LIST_URL = "[https://gist.githubusercontent.com/Shenzemo/7014871bbc721823ef28a5332740445f/raw/98b589c932a2598a484afa28a348a19986be043a/gistfile1.txt](https://gist.githubusercontent.com/Shenzemo/7014871bbc721823ef28a5332740445f/raw/98b589c932a2598a484afa28a348a19986be043a/gistfile1.txt)";
+const CURRENCY_URL = "[https://sarfe.erfjab.com/prices](https://sarfe.erfjab.com/prices)";
 
 exports.handler = async () => {
   const apiKey = process.env.GEMINI_API_KEY;
@@ -51,7 +51,7 @@ exports.handler = async () => {
         console.warn(`Failed to fetch currency rates. Status: ${currencyResponse.status}. Defaulting Toman rate to 0.`);
     }
 
-    // 4. Translate the services (limited to the first 75 for performance)
+    // 4. Translate the services
     const servicesToTranslate = originalServices.slice(0, 75).map(s => ({
       id: s.service,
       product_name: s.product_name,
@@ -72,8 +72,12 @@ exports.handler = async () => {
     
     let translatedServices;
     try {
-      translatedServices = JSON.parse(responseText);
+      // ** THE FIX IS HERE **
+      // Clean the AI response to remove Markdown formatting before parsing.
+      const cleanedText = responseText.replace(/```json/g, '').replace(/```/g, '').trim();
+      translatedServices = JSON.parse(cleanedText);
     } catch (parseError) {
+      // Log the original, unclean text for better debugging if it fails again.
       console.error("Failed to parse AI response as JSON:", responseText);
       throw new Error("AI response was not valid JSON.");
     }
@@ -96,3 +100,4 @@ exports.handler = async () => {
     };
   }
 };
+
