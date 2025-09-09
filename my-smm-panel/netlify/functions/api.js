@@ -22,13 +22,20 @@ exports.handler = async () => {
     const originalServices = await servicesResponse.json();
 
     if (!currencyResponse.ok) throw new Error("Failed to fetch currency rates");
-    const currencyData = await currencyResponse.json();
-    
-    // BUG FIX: The original code divided the price by 10, which seems incorrect for converting from Rial to Toman. 
-    // The API provides the price in Rials, so we divide by 10 to get Toman. The original code was dividing by 10 twice effectively.
-    // I've removed the extra division. If the API provides Toman directly, you can remove the `/ 10` altogether.
-    const usdPrice = currencyData.result.find(c => c.slug === "usd")?.price;
-    const usdToToman = usdPrice ? parseFloat(usdPrice.replace(/,/g, '')) / 10 : 0; // Corrected conversion
+const currencyData = await currencyResponse.json();
+
+let usdToToman = 0; // Default value
+// ROBUSTNESS: The currency API structure changed. It now returns an array directly.
+// We check if it's an array before trying to find the price to prevent crashes.
+if (Array.isArray(currencyData)) {
+    const usdData = currencyData.find(c => c.slug === "usd");
+    if (usdData && usdData.price) {
+        const usdPrice = parseFloat(usdData.price.replace(/,/g, ''));
+        if (!isNaN(usdPrice)) {
+            usdToToman = usdPrice / 10; // Convert from Rial to Toman
+        }
+    }
+}
 
     // IMPROVEMENT: Slicing the services list to 75 means you only ever translate the first 75.
     // This might be intentional for performance, but it's important to be aware of.
@@ -80,6 +87,7 @@ exports.handler = async () => {
     };
   }
 };
+
 
 
 
